@@ -7,13 +7,22 @@ public class Cliente {
     private int id;
     private String nombre;
     private int celular;
+    private String password;
 
     public Cliente(int id, String nombre, int celular) {
         this.id = id;
         this.nombre = nombre;
         this.celular = celular;
     }
+    
 
+    public Cliente(int id, String nombre, int celular, String password) {
+        this.id = id;
+        this.nombre = nombre;
+        this.celular = celular;
+        this.password = password;
+    }
+    
     public int getId() {
         return id;
     }
@@ -37,6 +46,15 @@ public class Cliente {
     public void setCelular(int celular) {
         this.celular = celular;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
     
     
     

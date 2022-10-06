@@ -14,11 +14,11 @@ public class Parqueadero {
         this.relacion = relacion;
     }
 
-    public int getId() {
+    public int getIdp() {
         return idp;
     }
 
-    public void setId(int idp) {
+    public void setIdp(int idp) {
         this.idp = idp;
     }
 
