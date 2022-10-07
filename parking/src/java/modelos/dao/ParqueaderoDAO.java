@@ -25,7 +25,7 @@ public class ParqueaderoDAO {
         ResultSet rs;
         List<Parqueadero> lista = new ArrayList<>();
         try {
-            ps = conexion.prepareStatement("SELECT idp, disponible, relacion FROM parqueadero");
+            ps = conexion.prepareStatement("SELECT idp, disponible, relacion FROM parqueadero WHERE disponible=TRUE");
             rs = ps.executeQuery();
             while (rs.next()) {                
                 int idp =rs.getInt("idp");
@@ -35,6 +35,27 @@ public class ParqueaderoDAO {
                 lista.add(parqueadero);
             }
             return lista;
+        } catch (SQLException e) {
+        }
+        return null;
+        
+    }
+    public Parqueadero idParqueaderos(int _id){
+        PreparedStatement ps;
+        ResultSet rs;
+        Parqueadero parqueadero = null;
+        try {
+            ps = conexion.prepareStatement("SELECT idp, disponible, relacion FROM parqueadero WHERE idp=?");
+            ps.setInt(1, _id);
+            rs = ps.executeQuery();
+            while (rs.next()) {                
+                int idp =rs.getInt("idp");
+                boolean disponible =rs.getBoolean("disponible");
+                int relacion =rs.getInt("relacion");
+                parqueadero =new Parqueadero(idp, disponible, relacion);
+                
+            }
+            return parqueadero;
         } catch (SQLException e) {
         }
         return null;

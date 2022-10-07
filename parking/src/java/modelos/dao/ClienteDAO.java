@@ -57,7 +57,7 @@ public class ClienteDAO {
     public boolean modificarCliente(Cliente cliente){
         PreparedStatement ps;
             try {
-                ps = conexion.prepareStatement("UPDATE cliente SET nombre=?, celular=?, password=? WHERE:id=?");
+                ps = conexion.prepareStatement("UPDATE cliente SET nombre=?, celular=?, password=? WHERE id=?");
                 ps.setString(1, cliente.getNombre());
                 ps.setInt(2, cliente.getCelular());
                 ps.setString(3, cliente.getPassword());
