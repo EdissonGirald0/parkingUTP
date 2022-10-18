@@ -13,7 +13,7 @@
       <span class="h4">REGISTRAR CLIENTE</span>
     </div>
     <form
-      action=""
+      action="ClientesController?accion=insertCliente"
       method="POST"
       style="width: 35%; margin: 0 auto"
     >
